@@ -53,15 +53,7 @@ public class Main {
 
 
     private static void calculando() {
-        for (int i = 0; i <= 100; i++) {
-            try {
-                Thread.sleep(10);
-                System.out.print("\rCalculando " + i + "%");
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
+        System.out.println("Calculando...");
         System.out.println("\nCarga completa ✔");
     }
 
