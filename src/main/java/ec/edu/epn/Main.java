@@ -30,30 +30,29 @@ public class Main {
             case ADD:
                 System.out.println("Suma de " + x + " + " + y);
                 calculando();
-                System.out.println("Resultado de la suma de los números "+ x + " y "+ y+ " es de" + calc.addition(x, y));
+                System.out.println("Resultado de la suma de los números "+ x + " y "+ y+ " es de " + calc.addition(x, y));
                 break;
             case SUBTRACT:
                 System.out.println("Resta de " + x + " - " + y);
                 calculando();
-                System.out.println("Resultado de la resta de los números "+ x + " y "+ y+ " es de" + calc.subtraction(x, y));
+                System.out.println("Resultado de la resta de los números "+ x + " y "+ y+ " es de " + calc.subtraction(x, y));
                 break;
             case MULTIPLICATION:
                 System.out.println("Multiplicación de " + x + " * " + y);
                 calculando();
-                System.out.println("Resultado de la multiplicación de los números "+ x + " y "+ y+ " es de" + calc.multiplication(x, y));
+                System.out.println("Resultado de la multiplicación de los números "+ x + " y "+ y+ " es de " + calc.multiplication(x, y));
                 break;
             case DIVISION:
                 System.out.println("Division de " + x + " / " + y);
                 calculando();
-                System.out.println("Resultado de la división de los números "+ x + " y "+ y+ " es de" + calc.division(x, y));
+                System.out.println("Resultado de la división de los números "+ x + " y "+ y+ " es de " + calc.division(x, y));
                 break;
         }
-        System.out.println("---------------------------------------------");
+        System.out.println("<<°>>".repeat(15));
     }
 
 
     private static void calculando() {
-        System.out.println("Calculando...");
         System.out.println("\nCarga completa ✔");
     }
 
