@@ -1,17 +1,69 @@
 package ec.edu.epn;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+enum Operation {
+    ADD, SUBTRACT, MULTIPLICATION, DIVISION
+}
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        String saludo = "Hola y Bienvenido" +
+                "Esta es una pequeña app en la que se mostrará el funcionamiento de una mini calculadora";
+        String despedida = "Gracias por usar esta app, espero que te haya sido de ayuda";
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        System.out.println(saludo);
+        operaciones();
+        System.out.println(despedida);
+        System.exit(0);
     }
+
+    private static void operaciones() {
+        System.out.println("Realizando operaciones...");
+        imprimirResultado(Operation.ADD, 5, 3);
+        imprimirResultado(Operation.SUBTRACT, 5, 3);
+        imprimirResultado(Operation.MULTIPLICATION, 5, 8);
+        imprimirResultado(Operation.DIVISION, 30, 3);
+    }
+
+    private static void imprimirResultado(Operation o, int x, int y) {
+        calculator calc = new calculator();
+        switch (o) {
+            case ADD:
+                System.out.println("Suma de " + x + " + " + y);
+                calculando();
+                System.out.println("Resultado de la suma de los números "+ x + " y "+ y+ " es de" + calc.addition(x, y));
+                break;
+            case SUBTRACT:
+                System.out.println("Resta de " + x + " - " + y);
+                calculando();
+                System.out.println("Resultado de la resta de los números "+ x + " y "+ y+ " es de" + calc.subtraction(x, y));
+                break;
+            case MULTIPLICATION:
+                System.out.println("Multiplicación de " + x + " * " + y);
+                calculando();
+                System.out.println("Resultado de la multiplicación de los números "+ x + " y "+ y+ " es de" + calc.multiplication(x, y));
+                break;
+            case DIVISION:
+                System.out.println("Division de " + x + " / " + y);
+                calculando();
+                System.out.println("Resultado de la división de los números "+ x + " y "+ y+ " es de" + calc.division(x, y));
+                break;
+        }
+        System.out.println("---------------------------------------------");
+    }
+
+
+    private static void calculando() {
+        for (int i = 0; i <= 100; i++) {
+            try {
+                Thread.sleep(10);
+                System.out.print("\rCalculando " + i + "%");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        System.out.println("\nCarga completa ✔");
+    }
+
+
 }
